@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom"
 import logo from "../assets/turuncusiyah.png"
 
-const Nav = () => {
+const Nav = ({user, setUser}) => {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -30,6 +30,12 @@ const Nav = () => {
             <NavLink to="/paths" className='nav-link'>
                 Paths
             </NavLink>
+            <NavLink to="/contact" className='nav-link'>
+                Contact
+            </NavLink>
+            <button className="nav-link" onClick={() => {
+              setUser(!user)
+            }} >{user ? "Logout" : "Login" }</button>
           </div>
         </div>
       </div>
